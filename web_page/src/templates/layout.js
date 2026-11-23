@@ -36,7 +36,12 @@ const EXTERNAL_ICON = '<svg class="ext-icon" aria-hidden="true" viewBox="0 0 12 
 // Public address of the published site (GitHub Pages). Used only where a full URL is required:
 // canonical / hreflang links, the sitemap and social-share previews. Change it here if the site moves
 // (for example to a custom domain); every other link stays relative.
-const SITE_URL = 'https://babilunga.github.io/elxop-lesvaqueres/';
+// The deploy workflow passes SITE_URL for the repository it runs in, so the preview and the official site
+// (https://lesvaqueres.github.io/elxop/) each get their own address.
+const SITE_URL = process.env.SITE_URL || 'https://babilunga.github.io/elxop-lesvaqueres/';
+// Only the official site may appear in search engines; any other copy (the preview) is marked noindex.
+const OFFICIAL_URL = 'https://lesvaqueres.github.io/elxop/';
+const IS_OFFICIAL = SITE_URL === OFFICIAL_URL;
 
 function head(title, desc, rel, extraCss = '') {
   return `<!doctype html>
@@ -46,7 +51,7 @@ function head(title, desc, rel, extraCss = '') {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
-<meta name="theme-color" content="#e3e5da">
+<meta name="theme-color" content="#e3e5da">${IS_OFFICIAL ? '' : '\n<meta name="robots" content="noindex">'}
 <link rel="icon" type="image/png" sizes="32x32" href="${rel}assets/images/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="${rel}assets/images/icons/favicon-192.png">
 <link rel="apple-touch-icon" href="${rel}assets/images/icons/apple-touch-icon.png">

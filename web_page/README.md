@@ -12,14 +12,18 @@ npm run i18n:merge    # after filling those files in: copy them into src/i18n/<l
 
 ## Publishing (GitHub Pages)
 
-Live site: **https://babilunga.github.io/elxop-lesvaqueres/** (repository `babilunga/elxop-lesvaqueres`).
+Official site: **https://lesvaqueres.github.io/elxop/** (repository `lesvaqueres/elxop`), updated only when publishing.
+Preview: https://babilunga.github.io/elxop-lesvaqueres/ (working repository `babilunga/elxop-lesvaqueres`).
+The preview is hidden from search engines: every build whose `SITE_URL` is not `OFFICIAL_URL` (`src/templates/layout.js`)
+gets `noindex`. If the official address changes, update `OFFICIAL_URL` too.
 
 - Every push to `main` that touches `web_page/` runs `.github/workflows/pages.yml` (repo root): it runs
   `npm run build` on GitHub, removes the local-only design-tool script (`impeccable-live`), and publishes `public/`.
   Progress and errors: the repository's **Actions** tab. Nothing to upload by hand.
-- The full public address lives in one place, `SITE_URL` in `src/templates/layout.js`. It is used only where a
+- The full public address is `SITE_URL`: the workflow sets it from the repository it runs in; the default for local
+  builds is in `src/templates/layout.js`. It is used only where a
   full URL is required: canonical and `hreflang` links, `sitemap.xml`, `robots.txt`, link previews (`og:` tags)
-  and the `<base>` of `404.html`. If the site moves (a custom domain, a renamed repository), change it there and build.
+  and the `<base>` of `404.html`. If the site moves to a custom domain, change both the workflow and that default.
 - Every page links CSS/JS as `assets/css/main.css?v=<hash>`: the build adds a short hash of each file's contents
   (end of `scripts/build.js`), so visitors get a changed file at once instead of an old cached copy.
 - Generated with every build: `404.html` (page-not-found, shown by GitHub for any unknown address),
