@@ -63,6 +63,7 @@ web_page/
 │   │   └── library.js      builds every book as a flip-book + the book cards
 │   │   ├── flipbook.js     flip-book pages (one A4 page at a time)
 │   │   ├── residencia.js   artist residency page (flyer hero + gliding sections)
+│   │   ├── joc.js          Joc de l'Horta page (board to download/print + rules)
 │   │   ├── legal.js        footer-only legal pages (avís legal, privacitat, galetes); owner details live in footer.js OWNER
 │   ├── partials/           hand-written HTML fragments injected into pages
 │   │   ├── fruits-de-la-tardor.html  (+ -nav.html; also museu, raco-dherbes)
@@ -79,6 +80,7 @@ web_page/
         ├── css/            main.css (site), library.css (books/cards), flipbook.css (recreated books)
         ├── js/             main.js (site behaviour, language), flipbook.js (page turning in the digital books)
         ├── video/          short muted loops for the page heads: <name>-av1.mp4 + <name>.mp4 (H.264) + <name>-poster.jpg
+        ├── downloads/      files offered for download (Joc de l'Horta board)
         └── images/
             ├── plants/     garden photos
             ├── instagram/  Instagram feed images
@@ -117,7 +119,7 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
      with an AV1 `<source>` first and H.264 second. Follow it with a `<button class="head-video-toggle" hidden>` (see `build.js`, Fruits de la tardor): main.js plays the video only when the device allows motion, and the button lets visitors pause it or start it. The local server (`npm run serve`) answers Range requests so Safari can play it.
    - JS identifiers `camelCase`, CSS classes `kebab-case`
    - full-size photo viewer: every photo (200 px wide or more) in the main content of the pages listed in
-     `VIEWER_PAGES` (`scripts/build.js`: Fruits de la tardor, Racó d'herbes, Museu) opens full screen when clicked,
+     `VIEWER_PAGES` (`scripts/build.js`: Fruits de la tardor, Racó d'herbes, Museu, Joc de l'Horta) opens full screen when clicked,
      with previous/next and close. To add it to another page, add that page's key to `VIEWER_PAGES`.
      Every book page has an "All books" link back to the Bibliography (`flipbook.js`).
 4. **Paths** in generated HTML are relative: `''` from `public/`, `'../'` from `public/library/`

@@ -15,7 +15,7 @@ const { execFileSync } = require('child_process');
 const PUBLIC = path.resolve(__dirname, '..', 'public');
 const IMAGES = path.join(PUBLIC, 'assets', 'images');
 const OUT = path.resolve(__dirname, '..', 'src', 'data', 'image-variants.json');
-const FOLDERS = ['hero', 'welcome', 'plants', 'nuts', 'museum', 'herbes', 'instagram', 'residencia'];
+const FOLDERS = ['hero', 'welcome', 'plants', 'nuts', 'museum', 'herbes', 'instagram', 'residencia', 'joc'];
 
 const MAX_W = 1600;   // biggest width we ever send
 const SM_W = 720;     // small variant width

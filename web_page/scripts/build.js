@@ -21,7 +21,7 @@ try {
 } catch (e) {}
 
 // full-size photo viewer (opened by main.js when a photo is clicked) on these pages
-const VIEWER_PAGES = ['fruits', 'herbes', 'museu'];
+const VIEWER_PAGES = ['fruits', 'herbes', 'museu', 'joc'];
 const VIEWER_UI = {
   viewer: t('Visor de fotos', 'Visor de fotos', 'Photo viewer'),
   prev: t('Foto anterior', 'Foto anterior', 'Previous photo'),
@@ -354,6 +354,14 @@ page({
   </section>`,
 });
 
+
+// ---------- joc de l'horta: game board (download / print) and rules ----------
+page({
+  file: PAGES.joc.href, key: 'joc', bodyClass: 'joc-page',
+  title: "Joc de l'Horta · El Xop", desc: "Tauler per imprimir i regles del Joc de l'Horta, una adaptació del joc de l'oca.",
+  extraHead: '\n<style>@page { margin: 10mm; }</style>',
+  body: require('../src/templates/joc.js').body(),
+});
 
 // ---------- legal pages: linked from the footer only, not from the menu ----------
 const legal = require('../src/templates/legal.js');

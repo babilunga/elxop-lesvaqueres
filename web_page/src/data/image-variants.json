@@ -2558,5 +2558,29 @@
     1200
    ]
   ]
+ },
+ "assets/images/joc/joc-de-l-horta-board.jpg": {
+  "w": 1024,
+  "h": 1024,
+  "avif": [
+   [
+    "assets/images/joc/joc-de-l-horta-board-sm.avif",
+    720
+   ],
+   [
+    "assets/images/joc/joc-de-l-horta-board.avif",
+    1024
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/joc/joc-de-l-horta-board-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/joc/joc-de-l-horta-board.jpg",
+    1024
+   ]
+  ]
  }
 }

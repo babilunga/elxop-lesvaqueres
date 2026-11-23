@@ -56,7 +56,7 @@ wellness brand. The poplar (el Xop), the fig tree and the cypresses are its symb
     ratings).
 - Surroundings (dropdown, no page): Autumn fruits, Herb corner (Racó d'herbes).
 - Museum.
-- Archive (dropdown, no page): Bibliography (book cards → 5 flip-books), El Xop in the past (external link to the old blog, https://elxoplleida.blogspot.com/, opens in a new tab with an external-link sign).
+- Archive (dropdown, no page): Bibliography (book cards → 5 flip-books), Joc de l'Horta (game board to download or print, and the rules, from the association's `Game.docx`), El Xop in the past (external link to the old blog, https://elxoplleida.blogspot.com/, opens in a new tab with an external-link sign).
 - Contacts: the footer of the current page.
 - Footer only: Legal notice, Privacy policy, Cookie policy.
 

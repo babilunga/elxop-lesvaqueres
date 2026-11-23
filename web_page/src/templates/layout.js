@@ -15,6 +15,7 @@ const PAGES = {
   museu:        { href: 'museu.html',           title: t('Museu', 'Museo', 'Museum') },
   arxiu:        { href: null,                 title: t('Arxiu', 'Archivo', 'Archive') }, // dropdown only, no page
   bibliografia: { href: 'bibliografia.html',    title: t('Bibliografia', 'Bibliografía', 'Bibliography') },
+  joc:          { href: 'joc-de-l-horta.html',  title: t('Joc de l’Horta', 'Juego de la Huerta', 'The Horta Game') },
   ahir:         { href: 'https://elxoplleida.blogspot.com/', external: true, title: t("El Xop d'ahir", 'El Xop de ayer', 'El Xop in the past') },
   contacte:     { href: '#contacte',                  title: F.TITLE }, // the footer of the page you are on
 };
@@ -155,7 +156,7 @@ function header(rel, active) {
           <li>${link('residencia', rel, active)}</li>
           ${labelMenu('entorn', ['fruits', 'herbes'], rel, active)}
           <li>${link('museu', rel, active)}</li>
-          ${labelMenu('arxiu', ['bibliografia', 'ahir'], rel, active)}
+          ${labelMenu('arxiu', ['bibliografia', 'joc', 'ahir'], rel, active)}
           <li>${tx('a', PAGES.contacte.title, ' href="#contacte" class="nav-contact"')}</li>
         </ul>
       </nav>

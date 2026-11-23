@@ -189,6 +189,9 @@ The two main faces are preloaded.
 - **Back to top**: round arbor button, 72px, arrow 27px, appears after the first screen.
 - **Skip link**: "Skip to content", hidden until focused by keyboard.
 - **Legal pages**: plain article, max 44em, date line then sections; no owner block.
+- **Joc de l'Horta** (`src/templates/joc.js`): board on the left (sticky; photo viewer on click) with two arbor
+  buttons (download the original PNG, print), rules on the right with special squares divided by hairlines; one
+  column under 860px, board first. Printing the page gives the board alone, on one sheet.
 - **Flip-book** (`src/templates/flipbook.js`, `assets/css/flipbook.css`, `assets/js/flipbook.js`): a book
   whose pages have been recreated (`src/data/books/pages/<book>.json`) is shown one A4 page at a time on
   book paper (`--paper: #f7f4ec`, very slightly warm off-white), with a thin page stack on the right.

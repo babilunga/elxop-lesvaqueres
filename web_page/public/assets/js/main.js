@@ -442,6 +442,13 @@
     }
   }
 
+  // ---------- joc de l'horta: print the board (print styles in main.css) ----------
+  var printBoard = document.querySelector(".joc-print");
+  if (printBoard) {
+    printBoard.hidden = false; // needs JavaScript, so it stays hidden without it
+    printBoard.addEventListener("click", function () { window.print(); });
+  }
+
   // ---------- full-size photo viewer (Surroundings and Museum pages: <dialog class="photo-viewer">) ----------
   // Every photo in the page's main content opens full size in the middle of the screen; the arrows
   // (buttons, arrow keys or a swipe) go through all the photos on the page. Close: the × button,

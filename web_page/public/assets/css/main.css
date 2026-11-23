@@ -1371,3 +1371,40 @@ html.res-lightbox-open { overflow: hidden; }
 /* photos that open full size in the photo viewer (main.js marks them; the viewer reuses .res-lightbox) */
 img.can-enlarge { cursor: zoom-in; }
 img.can-enlarge:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- joc de l'horta: board beside the rules; printing gives the board alone, on one sheet ---------- */
+.joc {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px); align-items: start;
+  padding-bottom: clamp(64px, 10vh, 112px);
+}
+.joc-board { position: sticky; top: calc(var(--header-h, 84px) + 24px); }
+.joc-img { display: block; width: 100%; max-width: calc(100vh - 220px); min-width: min(100%, 320px); height: auto; }
+.joc-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.joc-btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 12px 20px;
+  font: 600 0.9375rem/1.2 var(--sans); text-decoration: none; cursor: pointer;
+  background: var(--arbor); color: var(--surface); border: 0; border-radius: 8px;
+  transition: background-color 0.2s;
+}
+.joc-btn:hover { background: var(--ink); }
+.joc-btn svg { flex: none; }
+.joc-btn[hidden] { display: none; }
+.joc-rules h2 { font: 400 clamp(1.375rem, 2vw, 1.625rem)/1.2 var(--serif); margin: 0 0 0.5em; }
+.joc-rules p { margin: 0 0 1em; color: var(--ink-soft); text-wrap: pretty; }
+.joc-rules h2:not(:first-child) { margin-top: 1.4em; }
+.joc-special { list-style: none; margin: 0; padding: 0; color: var(--ink-soft); }
+.joc-special li { padding: 12px 0; border-top: 1px solid var(--line); text-wrap: pretty; }
+.joc-special em { display: block; color: var(--ink); }
+@media (max-width: 860px) {
+  .joc { grid-template-columns: minmax(0, 1fr); }
+  .joc-board { position: static; }
+  .joc-img { max-width: 100%; }
+}
+@media print {
+  .joc-page { background: none; }
+  .joc-page > :not(main), .joc-page .page-head, .joc-page .joc-actions, .joc-page .joc-rules { display: none !important; }
+  .joc-page .joc { display: block; max-width: none; padding: 0; }
+  .joc-page .joc-board { position: static; }
+  .joc-page .joc-img { width: 100%; max-width: 96vh; min-width: 0; margin: 0 auto; opacity: 1 !important; break-inside: avoid; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
