@@ -27,7 +27,7 @@ const SIZES = [
   [/\bres-hero-photo\b/, '(max-width: 860px) 100vw, 60vw'],
   [/\bres-casa-photo\b/, '(max-width: 760px) 100vw, 1080px'],
   [/images\/residencia\//, '(max-width: 760px) 100vw, 480px'],
-  [/\bjoc-img\b/, '(max-width: 860px) 100vw, 600px'],
+  [/\bjoc-img\b/, '1024px'], // always the full-size board, so it prints sharp
   [/images\/welcome\//, '(max-width: 1099px) 460px, 500px'],
 ];
 const DEFAULT_SIZES = '(max-width: 760px) 100vw, 50vw';
